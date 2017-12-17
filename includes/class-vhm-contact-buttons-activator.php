@@ -21,6 +21,23 @@
  * @author     Viktor H. Morales <hello@viktormorales.com>
  */
 class Vhm_Contact_Buttons_Activator {
+	/**
+	 * The options name to be used in this plugin
+	 *
+	 * @since  	1.0.0
+	 * @access 	private
+	 * @var  	string 		$option_name 	Option name of this plugin
+	 */
+	private static $option_name = 'vhm_contact_buttons';
+	
+	/**
+	 * The unique identifier of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 */
+	private static $plugin_name = 'vhm-contact-buttons';
 
 	/**
 	 * Short Description. (use period)
