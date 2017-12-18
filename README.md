@@ -2,6 +2,8 @@
 
 WordPress Plugin to show the most popular platforms contact buttons
 
+<img style="width:100%" src="https://github.com/viktormorales/VHM-Contact-Buttons/blob/master/screenshot.png">
+
 ## Setup
 * Download the [Master branch](https://github.com/viktormorales/VHM-Contact-Buttons/archive/master.zip).
 * Extract the files from the ZIP.

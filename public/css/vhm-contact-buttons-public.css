@@ -15,14 +15,14 @@
 }
 .vhm-contact-buttons-list li a, a#vhm-contact-buttons-android, .vhm-contact-buttons-list li a:hover {
  	color: #fff !important;
- 	padding: 8px 16px;
+ 	padding: 8px 16px !important;
  	margin: 5px;
  	display: block;
  	text-align: center;
  	text-decoration: none;
 }
 .vhm-contact-buttons-list li a#vhm-contact-buttons-facebook {
- 	background: #3b5998;
+ 	background: #0084ff;
 }
 .vhm-contact-buttons-list li a#vhm-contact-buttons-whatsapp {
  	background: #4dc247;
