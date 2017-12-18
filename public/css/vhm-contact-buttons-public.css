@@ -2,3 +2,38 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.vhm-contact-buttons-list li {
+	 	display: inline-block !important;
+	 	width: 50% !important;
+	}
+}
+
+/* For desktops: */
+.vhm-contact-buttons-list {
+ 	list-style-type: none;
+ 	padding: 0px;
+}
+.vhm-contact-buttons-list li {
+ 	display: block;
+ 	width: 100%;
+}
+.vhm-contact-buttons-list li a, a#vhm-contact-buttons-android, .vhm-contact-buttons-list li a:hover {
+ 	color: #fff !important;
+ 	padding: 8px 16px;
+ 	margin: 5px;
+ 	display: block;
+ 	text-align: center;
+ 	text-decoration: none;
+}
+.vhm-contact-buttons-list li a#vhm-contact-buttons-facebook {
+ 	background: #3b5998;
+}
+.vhm-contact-buttons-list li a#vhm-contact-buttons-whatsapp {
+ 	background: #4dc247;
+}
+.vhm-contact-buttons-list li a#vhm-contact-buttons-skype {
+ 	background: #12A5F4;
+}

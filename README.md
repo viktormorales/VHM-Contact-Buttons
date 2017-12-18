@@ -17,6 +17,9 @@ WordPress Plugin to show the most popular platforms contact buttons
 
 ## Changelog
 
+### 1.0.2
+* Added fontawesome icons and colors
+
 ### 1.0.1
 * Added a default text to send when open WhatsApp.
 

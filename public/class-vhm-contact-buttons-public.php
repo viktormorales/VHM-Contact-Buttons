@@ -97,6 +97,7 @@ class Vhm_Contact_Buttons_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vhm-contact-buttons-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/054c37251c.js', false, $this->version, true );
 
 	}
 
