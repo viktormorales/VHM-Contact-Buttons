@@ -71,6 +71,7 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 		$facebook = get_option( 'vhm_contact_buttons_facebook' );
 		$whatsapp = get_option( 'vhm_contact_buttons_whatsapp' );
 		$skype = get_option( 'vhm_contact_buttons_skype' );
+		$send_text = get_option( 'vhm_contact_buttons_send_text' );
 
 		if ($active)
 		{
@@ -84,10 +85,10 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 				$output .= '<li><a id="vhm-contact-buttons-facebook" href="//m.me/'.$facebook.'">' . __('Facebook Messenger', self::$plugin_name) . '</a></li>';
 			}
 			if ($whatsapp_active) {
-				$output .= '<li><a id="vhm-contact-buttons-twitter" href="whatsapp://send?text=Hello this has been opened from the browser&phone='.$whatsapp.'&abid='.$whatsapp.'">' . __('WhatsApp', self::$plugin_name) . '</a></li>';
+				$output .= '<li><a id="vhm-contact-buttons-twitter" href="//api.whatsapp.com/send?phone='.$whatsapp.'&text='. urlencode($send_text) .'">' . __('WhatsApp', self::$plugin_name) . '</a></li>';
 			}
 			if ($skype_active) {
-				$output .= '<li><a id="vhm-contact-button-skype" href="skype:'.$skype.'?chat[&topic=Contact from web]">' . __('Skype', self::$plugin_name) . '</a></li>';
+				$output .= '<li><a id="vhm-contact-button-skype" href="skype:'.$skype.'?chat[&topic='. urlencode($send_text) .']">' . __('Skype', self::$plugin_name) . '</a></li>';
 			}
 			$output .= '</ul>';
 

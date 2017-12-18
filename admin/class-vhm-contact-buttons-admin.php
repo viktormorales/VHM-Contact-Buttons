@@ -163,6 +163,15 @@ class Vhm_Contact_Buttons_Admin {
 		);
 
 		add_settings_field(
+			$this->option_name . '_send_text',
+			__( 'Text to send', $this->plugin_name ),
+			array( $this, $this->option_name .'_send_text_cb' ),
+			$this->plugin_name,
+			$this->option_name . '_general',
+			array( 'label_for' => $this->option_name . '_send_text' )
+		);
+
+		add_settings_field(
 			$this->option_name . '_applications',
 			__( 'Applications', $this->plugin_name ),
 			array( $this, $this->option_name .'_applications_cb' ),
@@ -172,6 +181,7 @@ class Vhm_Contact_Buttons_Admin {
 		);
 		
 		register_setting( $this->plugin_name, $this->option_name . '_active' );
+		register_setting( $this->plugin_name, $this->option_name . '_send_text' );
 		register_setting( $this->plugin_name, $this->option_name . '_facebook' );
 		register_setting( $this->plugin_name, $this->option_name . '_whatsapp' );
 		register_setting( $this->plugin_name, $this->option_name . '_skype' );
@@ -184,6 +194,7 @@ class Vhm_Contact_Buttons_Admin {
 	public function vhm_contact_buttons_general_cb() {
 		echo '<p>' . __( 'Add contact buttons on your website.', $this->plugin_name ) . '</p>';
 	}
+
 	/**
 	 * Render the input field for "element" option
 	 *
@@ -196,6 +207,18 @@ class Vhm_Contact_Buttons_Admin {
 		echo ($active)? " checked" : false;
 		echo '>';
 		echo __('Tick the box if you want to display the buttons.', $this->plugin_name) . '</label>';
+	}
+
+	/**
+	 * Render the input field for "Text to send" option
+	 *
+	 * @since  1.0.0
+	 */
+	public function vhm_contact_buttons_send_text_cb() {
+		$send_text = get_option( $this->option_name . '_send_text' );
+
+		echo '<input type="text" name="' . $this->option_name . '_send_text' . '" id="' . $this->option_name . '_send_text' . '" value="'.$send_text.'">';
+		echo '<p class="description">' . __('Enter a text you want to send.', $this->plugin_name) . '</p>';
 	}
 
 	/**

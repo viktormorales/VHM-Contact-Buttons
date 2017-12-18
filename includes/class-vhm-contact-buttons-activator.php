@@ -49,7 +49,7 @@ class Vhm_Contact_Buttons_Activator {
 	public static function activate() {
 		// Add default options
 		update_option(self::$option_name . '_active', 'on');
-		update_option(self::$option_name . '_applications', array('facebook','whatsapp', 'skype'));
+		update_option(self::$option_name . '_send_text', __('Hi! I have a question about your product.', self::$plugin_name));
 	}
 
 }
