@@ -17,7 +17,7 @@
  * Plugin URI:        https://viktormorales.com
  * GitHub Plugin URI: https://github.com/viktormorales/VHM-Contact-Buttons
  * Description:       WordPress Plugin to show the most popular platforms contact buttons
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Viktor H. Morales
  * Author URI:        https://viktormorales.com
  * License:           GPL-2.0+
