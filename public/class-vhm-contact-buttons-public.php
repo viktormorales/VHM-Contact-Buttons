@@ -134,7 +134,7 @@ class Vhm_Contact_Buttons_Public {
 		}
 		$output .= '</ul>';
 
-		echo $output;
+		return $output;
 	}
 
 }

@@ -3,6 +3,13 @@
  * included in this file.
  */
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.vhm-contact-buttons-list li {
+	 	display: inline-block !important;
+	 	width: 50% !important;
+	}
+}
 
 /* For desktops: */
 .vhm-contact-buttons-list {
