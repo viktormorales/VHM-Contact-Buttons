@@ -13,7 +13,7 @@ WordPress Plugin to show the most popular platforms contact buttons
 
 ## FAQ
 ### How to use shortcode?
-Place '[vhm-contact-buttons messenger="1" whatsapp="1" skype="1"]' where you want to display the buttons. Change attributes to "0" if you want to hide the application from the list.
+Place `[vhm-contact-buttons messenger="1" whatsapp="1" skype="1"]` where you want to display the buttons. Change attributes to "0" if you want to hide the application from the list.
 
 ## Features
 * Widget and shortcodes
