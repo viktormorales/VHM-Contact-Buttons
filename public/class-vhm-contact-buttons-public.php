@@ -29,7 +29,7 @@ class Vhm_Contact_Buttons_Public {
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
-	private $plugin_name;
+	private static $plugin_name;
 
 	/**
 	 * The version of this plugin.
@@ -99,6 +99,37 @@ class Vhm_Contact_Buttons_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vhm-contact-buttons-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/054c37251c.js', false, $this->version, true );
 
+	}
+
+	public function register_shortcodes() {
+	    add_shortcode( 'vhm-contact-buttons', array( $this, 'shortcode') );
+	}
+
+	public function shortcode($atts) {
+		$messenger_opt = get_option( 'vhm_contact_buttons_facebook' );
+		$whatsapp_opt = get_option( 'vhm_contact_buttons_whatsapp' );
+		$skype_opt = get_option( 'vhm_contact_buttons_skype' );
+		$send_text_opt = get_option( 'vhm_contact_buttons_send_text' );
+
+		extract( shortcode_atts( array(		
+			'messenger' => 1,
+			'whatsapp' => 1,
+			'skype' => 1
+		), $atts ) );
+
+		$output .= '<ul class="vhm-contact-buttons-list">';
+		if ($messenger_opt && $messenger) {
+			$output .= '<li><a id="vhm-contact-buttons-facebook" href="//m.me/'.$messenger_opt.'"><i class="fa fa-facebook-official"></i> ' . __('Facebook Messenger', self::$plugin_name) . '</a></li>';
+		}
+		if ($whatsapp_opt && $whatsapp) {
+			$output .= '<li><a id="vhm-contact-buttons-whatsapp" href="//api.whatsapp.com/send?phone='.$whatsapp_opt.'&text='. urlencode($send_text_opt) .'"><i class="fa fa-whatsapp"></i> ' . __('WhatsApp', self::$plugin_name) . '</a></li>';
+		}
+		if ($skype_opt && $skype) {
+			$output .= '<li><a id="vhm-contact-buttons-skype" href="skype:'.$skype_opt.'?chat[&topic='. urlencode($send_text_opt) .']"><i class="fa fa-skype"></i> ' . __('Skype', self::$plugin_name) . '</a></li>';
+		}
+		$output .= '</ul>';
+
+		echo $output;
 	}
 
 }
