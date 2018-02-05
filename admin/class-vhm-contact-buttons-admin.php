@@ -184,6 +184,7 @@ class Vhm_Contact_Buttons_Admin {
 		register_setting( $this->plugin_name, $this->option_name . '_facebook' );
 		register_setting( $this->plugin_name, $this->option_name . '_whatsapp' );
 		register_setting( $this->plugin_name, $this->option_name . '_skype' );
+		register_setting( $this->plugin_name, $this->option_name . '_email' );
 	}
 	/**
 	 * Render the text for the general section
@@ -229,6 +230,7 @@ class Vhm_Contact_Buttons_Admin {
 		$facebook = get_option( $this->option_name . '_facebook' );
 		$whatsapp = get_option( $this->option_name . '_whatsapp' );
 		$skype = get_option( $this->option_name . '_skype' );
+		$email = get_option( $this->option_name . '_email' );
 		
 		echo '<fieldset><legend class="screen-reader-text"><span>Applications</span></legend>';
 		
@@ -243,6 +245,10 @@ class Vhm_Contact_Buttons_Admin {
 		/* Contact on Skype */
 		echo '<p>' . __('Your Skype ID:', $this->plugin_name) . '</p>';
 		echo '<input type="text" name="' . $this->option_name . '_skype' . '" id="' . $this->option_name . '_skype' . '" value="' . $skype . '">';
+
+		/* Contact through email */
+		echo '<p>' . __('Contact URL page:', $this->plugin_name) . '</p>';
+		echo '<input type="text" name="' . $this->option_name . '_email' . '" id="' . $this->option_name . '_email' . '" value="' . $email . '">';
 
 		echo '</fieldset>';
 	}

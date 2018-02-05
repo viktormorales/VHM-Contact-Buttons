@@ -66,11 +66,13 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 		$facebook_active = ! empty( $instance['facebook'] ) ? true : false ;
 		$whatsapp_active = ! empty( $instance['whatsapp'] ) ? true : false ;
 		$skype_active = ! empty( $instance['skype'] ) ? true : false ;
+		$email_active = ! empty( $instance['email'] ) ? true : false ;
 
 		$active = get_option( 'vhm_contact_buttons_active' );
 		$facebook = get_option( 'vhm_contact_buttons_facebook' );
 		$whatsapp = get_option( 'vhm_contact_buttons_whatsapp' );
 		$skype = get_option( 'vhm_contact_buttons_skype' );
+		$email = get_option( 'vhm_contact_buttons_email' );
 		$send_text = get_option( 'vhm_contact_buttons_send_text' );
 
 		if ($active)
@@ -89,6 +91,9 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 			}
 			if ($skype && $skype_active) {
 				$output .= '<li><a id="vhm-contact-buttons-skype" href="skype:'.$skype.'?chat[&topic='. urlencode($send_text) .']"><i class="fa fa-skype"></i> ' . __('Skype', self::$plugin_name) . '</a></li>';
+			}
+			if ($email && $email_active) {
+				$output .= '<li><a id="vhm-contact-buttons-email" href="'.$email.'"><i class="fa fa-envelope"></i> ' . __('Email', self::$plugin_name) . '</a></li>';
 			}
 			$output .= '</ul>';
 
@@ -110,6 +115,7 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 		$facebook_active = ! empty( $instance['facebook'] ) ? true : false ;
 		$whatsapp_active = ! empty( $instance['whatsapp'] ) ? true : false ;
 		$skype_active = ! empty( $instance['skype'] ) ? true : false ;
+		$email_active = ! empty( $instance['email'] ) ? true : false ;
 		?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
@@ -134,6 +140,12 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 		</label> 
 		</p>
 
+		<p>
+		<label>
+		<input name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="checkbox"<?php echo ($email_active) ? ' checked="checked"' : false ; ?>> <?php esc_attr_e( 'Email', self::$plugin_name ); ?>
+		</label> 
+		</p>
+
 		<?php
 	}
 
@@ -153,6 +165,7 @@ class Vhm_Contact_Buttons_Widget extends WP_Widget {
 		$instance['facebook'] = ( ! empty( $new_instance['facebook'] ) ) ? strip_tags( $new_instance['facebook'] ) : '';
 		$instance['whatsapp'] = ( ! empty( $new_instance['whatsapp'] ) ) ? strip_tags( $new_instance['whatsapp'] ) : '';
 		$instance['skype'] = ( ! empty( $new_instance['skype'] ) ) ? strip_tags( $new_instance['skype'] ) : '';
+		$instance['email'] = ( ! empty( $new_instance['email'] ) ) ? strip_tags( $new_instance['email'] ) : '';
 
 		return $instance;
 	}

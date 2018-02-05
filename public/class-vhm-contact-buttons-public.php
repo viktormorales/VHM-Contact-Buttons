@@ -109,12 +109,14 @@ class Vhm_Contact_Buttons_Public {
 		$messenger_opt = get_option( 'vhm_contact_buttons_facebook' );
 		$whatsapp_opt = get_option( 'vhm_contact_buttons_whatsapp' );
 		$skype_opt = get_option( 'vhm_contact_buttons_skype' );
+		$email_opt = get_option( 'vhm_contact_buttons_email' );
 		$send_text_opt = get_option( 'vhm_contact_buttons_send_text' );
 
 		extract( shortcode_atts( array(		
 			'messenger' => 1,
 			'whatsapp' => 1,
-			'skype' => 1
+			'skype' => 1,
+			'email' => 1
 		), $atts ) );
 
 		$output .= '<ul class="vhm-contact-buttons-list">';
@@ -126,6 +128,9 @@ class Vhm_Contact_Buttons_Public {
 		}
 		if ($skype_opt && $skype) {
 			$output .= '<li><a id="vhm-contact-buttons-skype" href="skype:'.$skype_opt.'?chat[&topic='. urlencode($send_text_opt) .']"><i class="fa fa-skype"></i> ' . __('Skype', self::$plugin_name) . '</a></li>';
+		}
+		if ($email_opt && $email) {
+			$output .= '<li><a id="vhm-contact-buttons-email" href="'.$email_opt.'"><i class="fa fa-envelope"></i> ' . __('Email', self::$plugin_name) . '</a></li>';
 		}
 		$output .= '</ul>';
 
