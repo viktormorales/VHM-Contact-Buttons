@@ -124,7 +124,7 @@ class Vhm_Contact_Buttons_Public {
 			$output .= '<li><a id="vhm-contact-buttons-facebook" href="//m.me/'.$messenger_opt.'"><i class="fab fa-facebook-messenger"></i> ' . __('Facebook Messenger', self::$plugin_name) . '</a></li>';
 		}
 		if ($whatsapp_opt && $whatsapp) {
-			$output .= '<li><a id="vhm-contact-buttons-whatsapp" href="//api.whatsapp.com/send?phone='.$whatsapp_opt.'&text='. urlencode($send_text_opt) .'"><i class="fab fa-whatsapp"></i> ' . __('WhatsApp', self::$plugin_name) . '</a></li>';
+			$output .= '<li><a id="vhm-contact-buttons-whatsapp" href="//wa.me/'.$whatsapp_opt.'?text='. urlencode($send_text_opt) .'"><i class="fab fa-whatsapp"></i> ' . __('WhatsApp', self::$plugin_name) . '</a></li>';
 		}
 		if ($skype_opt && $skype) {
 			$output .= '<li><a id="vhm-contact-buttons-skype" href="skype:'.$skype_opt.'?chat[&topic='. urlencode($send_text_opt) .']"><i class="fab fa-skype"></i> ' . __('Skype', self::$plugin_name) . '</a></li>';
