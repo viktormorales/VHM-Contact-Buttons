@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plantilla Wordpress\n"
-"POT-Creation-Date: 2018-02-05 15:44+0300\n"
-"PO-Revision-Date: 2018-02-05 15:46+0300\n"
+"POT-Creation-Date: 2020-04-14 13:54-0300\n"
+"PO-Revision-Date: 2020-04-14 13:58-0300\n"
 "Last-Translator: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
 "Language-Team: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_nx:4c,1,2;_ex:1,2c\n"
@@ -40,44 +40,64 @@ msgstr "Texto a enviar"
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: ../admin/class-vhm-contact-buttons-admin.php:194
+#: ../admin/class-vhm-contact-buttons-admin.php:196
 msgid "Add contact buttons on your website."
 msgstr "Agrega botones de contacto en tu sitio web."
 
-#: ../admin/class-vhm-contact-buttons-admin.php:208
+#: ../admin/class-vhm-contact-buttons-admin.php:210
 msgid "Tick the box if you want to display the buttons."
 msgstr "Tilde la casilla si quiere mostrar los botones"
 
-#: ../admin/class-vhm-contact-buttons-admin.php:220
+#: ../admin/class-vhm-contact-buttons-admin.php:222
 msgid "Enter a text you want to send."
 msgstr "Ingrese el texto que quiere enviar."
 
-#: ../admin/class-vhm-contact-buttons-admin.php:236
-msgid "Your Facebook Messenger personal or page ID:"
+#: ../admin/class-vhm-contact-buttons-admin.php:241
+msgid "Your Facebook Messenger personal or page ID."
 msgstr "El ID de tu cuenta personal o página de Facebook Messenger."
 
-#: ../admin/class-vhm-contact-buttons-admin.php:240
-msgid "Your WhatsApp phone number:"
-msgstr "Tu número de WhatsApp"
+#: ../admin/class-vhm-contact-buttons-admin.php:245
+msgid "Your WhatsApp phone number."
+msgstr "Tu número de WhatsApp,"
 
-#: ../admin/class-vhm-contact-buttons-admin.php:244
-msgid "Your Skype ID:"
-msgstr "Tu ID de Skype:"
+#: ../admin/class-vhm-contact-buttons-admin.php:249
+msgid "Your Telegram username."
+msgstr "Tu nombre de usuario de Telegram."
+
+#: ../admin/class-vhm-contact-buttons-admin.php:253
+msgid "Your Skype ID."
+msgstr "Tu ID de Skype."
+
+#: ../admin/class-vhm-contact-buttons-admin.php:257
+msgid "Your email."
+msgstr "Tu correo electrónico."
 
 #: ../includes/class-vhm-contact-buttons-activator.php:52
 msgid "Hi! I have a question about your product."
 msgstr "Hola! Tengo una pregunta sobre tu producto."
 
-#: ../includes/class-vhm-contact-buttons-widgets.php:85
+#: ../includes/class-vhm-contact-buttons-widgets.php:87
+#: ../public/class-vhm-contact-buttons-public.php:126
 msgid "Facebook Messenger"
 msgstr ""
 
-#: ../includes/class-vhm-contact-buttons-widgets.php:88
+#: ../includes/class-vhm-contact-buttons-widgets.php:90
+#: ../public/class-vhm-contact-buttons-public.php:129
 msgid "WhatsApp"
 msgstr ""
 
-#: ../includes/class-vhm-contact-buttons-widgets.php:91
+#: ../includes/class-vhm-contact-buttons-widgets.php:93
+#: ../public/class-vhm-contact-buttons-public.php:135
 msgid "Skype"
+msgstr ""
+
+#: ../includes/class-vhm-contact-buttons-widgets.php:96
+#: ../public/class-vhm-contact-buttons-public.php:138
+msgid "Email"
+msgstr ""
+
+#: ../public/class-vhm-contact-buttons-public.php:132
+msgid "Telegram"
 msgstr ""
 
 #~ msgid "Previous page"

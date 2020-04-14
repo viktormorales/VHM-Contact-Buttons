@@ -183,6 +183,7 @@ class Vhm_Contact_Buttons_Admin {
 		register_setting( $this->plugin_name, $this->option_name . '_send_text' );
 		register_setting( $this->plugin_name, $this->option_name . '_facebook' );
 		register_setting( $this->plugin_name, $this->option_name . '_whatsapp' );
+		register_setting( $this->plugin_name, $this->option_name . '_telegram' );
 		register_setting( $this->plugin_name, $this->option_name . '_skype' );
 		register_setting( $this->plugin_name, $this->option_name . '_email' );
 	}
@@ -229,26 +230,31 @@ class Vhm_Contact_Buttons_Admin {
 	public function vhm_contact_buttons_applications_cb() {
 		$facebook = get_option( $this->option_name . '_facebook' );
 		$whatsapp = get_option( $this->option_name . '_whatsapp' );
+		$telegram = get_option( $this->option_name . '_telegram' );
 		$skype = get_option( $this->option_name . '_skype' );
 		$email = get_option( $this->option_name . '_email' );
 		
 		echo '<fieldset><legend class="screen-reader-text"><span>Applications</span></legend>';
 		
 		/* Contact on Facebook Messenger */
-		echo '<p>' . __('Your Facebook Messenger personal or page ID:', $this->plugin_name) . '</p>';
 		echo '<p><input type="text" name="' . $this->option_name . '_facebook' . '" id="' . $this->option_name . '_facebook' . '" value="' . $facebook . '"></p>';
+		echo '<p class="description">' . __('Your Facebook Messenger personal or page ID.', $this->plugin_name) . '</p><br>';
 
 		/* Contact on WhatsApp */
-		echo '<p>' . __('Your WhatsApp phone number:', $this->plugin_name) . '</p>';
 		echo '<p><input type="text" name="' . $this->option_name . '_whatsapp' . '" id="' . $this->option_name . '_whatsapp' . '" value="' . $whatsapp . '"></p>';
+		echo '<p class="description">' . __('Your WhatsApp phone number.', $this->plugin_name) . '</p><br>';
+
+		/* Contact on Telegram */
+		echo '<p><input type="text" name="' . $this->option_name . '_telegram' . '" id="' . $this->option_name . '_telegram' . '" value="' . $telegram . '"></p>';
+		echo '<p class="description">' . __('Your Telegram username.', $this->plugin_name) . '</p><br>';
 		
 		/* Contact on Skype */
-		echo '<p>' . __('Your Skype ID:', $this->plugin_name) . '</p>';
 		echo '<input type="text" name="' . $this->option_name . '_skype' . '" id="' . $this->option_name . '_skype' . '" value="' . $skype . '">';
+		echo '<p class="description">' . __('Your Skype ID.', $this->plugin_name) . '</p><br>';
 
 		/* Contact through email */
-		echo '<p>' . __('Contact URL page:', $this->plugin_name) . '</p>';
 		echo '<input type="text" name="' . $this->option_name . '_email' . '" id="' . $this->option_name . '_email' . '" value="' . $email . '">';
+		echo '<p class="description">' . __('Your email.', $this->plugin_name) . '</p>';
 
 		echo '</fieldset>';
 	}

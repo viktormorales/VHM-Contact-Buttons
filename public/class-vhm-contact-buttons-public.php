@@ -108,6 +108,7 @@ class Vhm_Contact_Buttons_Public {
 	public function shortcode($atts) {
 		$messenger_opt = get_option( 'vhm_contact_buttons_facebook' );
 		$whatsapp_opt = get_option( 'vhm_contact_buttons_whatsapp' );
+		$telegram_opt = get_option( 'vhm_contact_buttons_telegram' );
 		$skype_opt = get_option( 'vhm_contact_buttons_skype' );
 		$email_opt = get_option( 'vhm_contact_buttons_email' );
 		$send_text_opt = get_option( 'vhm_contact_buttons_send_text' );
@@ -115,6 +116,7 @@ class Vhm_Contact_Buttons_Public {
 		extract( shortcode_atts( array(		
 			'messenger' => 1,
 			'whatsapp' => 1,
+			'telegram' => 1,
 			'skype' => 1,
 			'email' => 1
 		), $atts ) );
@@ -125,6 +127,9 @@ class Vhm_Contact_Buttons_Public {
 		}
 		if ($whatsapp_opt && $whatsapp) {
 			$output .= '<li><a id="vhm-contact-buttons-whatsapp" href="//wa.me/'.$whatsapp_opt.'?text='. urlencode($send_text_opt) .'"><i class="fab fa-whatsapp"></i> ' . __('WhatsApp', self::$plugin_name) . '</a></li>';
+		}
+		if ($telegram_opt && $telegram) {
+			$output .= '<li><a id="vhm-contact-buttons-telegram" href="//t.me/'.$telegram_opt.'?text='. urlencode($send_text_opt) .'"><i class="fab fa-telegram"></i> ' . __('Telegram', self::$plugin_name) . '</a></li>';
 		}
 		if ($skype_opt && $skype) {
 			$output .= '<li><a id="vhm-contact-buttons-skype" href="skype:'.$skype_opt.'?chat[&topic='. urlencode($send_text_opt) .']"><i class="fab fa-skype"></i> ' . __('Skype', self::$plugin_name) . '</a></li>';
